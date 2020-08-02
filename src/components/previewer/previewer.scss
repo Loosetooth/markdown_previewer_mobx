@@ -1,0 +1,30 @@
+
+.preview-normal{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 50vw;
+}
+
+.preview-expanded{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.preview-shrunk{
+    visibility: collapse;
+}
+
+.preview-switched{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 100vw;
+}
+
+.markdown-visualization{
+    overflow-y: scroll;
+    height: 100%;
+}

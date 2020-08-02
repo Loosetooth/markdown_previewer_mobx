@@ -1,17 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ObserverEditor from "./components/editor/editor";
+import ObserverPreviewer from "./components/previewer/previewer";
+import { observer } from "mobx-react";
+
+import { store } from "./store";
+
+class MarkdownPreviewer extends React.Component {
+  render(){
+    return <div className={this.props.store.layoutClass}>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous"></link>
+    <ObserverEditor store={store}/>
+    <ObserverPreviewer store={store}/>
+  </div>
+  }
+}
+
+const ObserverMarkdownPreviewer = observer(MarkdownPreviewer);
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <ObserverMarkdownPreviewer store={store}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
