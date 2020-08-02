@@ -12,8 +12,10 @@ const LAYOUT_SWITCHED = "component-holder-switched";
 const EDITOR_SWITCHED = "editor-switched";
 const PREVIEW_SWITCHED = "preview-switched";
 
+export const START_PHRASE = "# This is a title \n * test \n * test";
+
 class Store {
-    input = "# this is a title \n * test \n * test";
+    input = START_PHRASE;
     previewExpanded = false;
     editorExpanded = false;
     switched = false;

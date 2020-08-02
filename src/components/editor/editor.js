@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './editor.scss'
 import { Title } from "../title/title";
 import {observer} from "mobx-react";
+import { START_PHRASE } from "../../store";
 
 class Editor extends Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class Editor extends Component {
         if(!this.props.store.previewExpanded){
             return <div className={this.props.store.editorClass}>
             <Title title="Markdown Editor" onExpandClick={this.expand} onSwitchClick={this.switch}/>
-            <textarea onChange={this.handleChange} className="text-area" id="editor">{"# this is a title \n * test \n * test"}</textarea>
+            <textarea onChange={this.handleChange} className="text-area" id="editor">{START_PHRASE}</textarea>
             </div>;
         } else {
             return "";
