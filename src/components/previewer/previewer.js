@@ -20,7 +20,7 @@ class Previewer extends Component {
       if(!this.props.store.editorExpanded){
         return <div className={this.props.store.previewClass}>
           <Title title="Markdown Preview" onExpandClick={this.expand} onSwitchClick={this.switch}/>
-          <div id="previewer" className="markdown-visualization" dangerouslySetInnerHTML={{__html: this.props.store.myHtml}}>
+          <div id="preview" className="markdown-visualization" dangerouslySetInnerHTML={{__html: this.props.store.myHtml}}>
           </div>
         </div>;
       } else {
